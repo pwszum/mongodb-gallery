@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='/galleries/gallery_delete')
+    div.form-group
+      label(for='s_gallery') Choose gallery to delete:
+      select#s_gallery.form-control(name='s_gallery' required)
+        for gallery in galleries
+          option(value=gallery._id) #{gallery.name}
+    button.btn.btn-danger(type='submit') Usuń galerię
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

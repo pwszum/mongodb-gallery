@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1=title
+  
+  form(method='POST')
+    div.form-group
+      label(for='name') Gallery name:
+      input#name.form-control(type='text', placeholder='min. 2 litery' name='name' required value=(undefined===gallery ? "" : gallery.name))
+      label(for='description') Description:
+      input#description.form-control(type='text', placeholder='min. 2 litery' name='description' required value=(undefined===gallery ? "" : gallery.description))
+      label(for='user') Owner:
+      select#user.form-control(name='user' required)
+        option(value="") --Select a user--
+        for user in users
+          if gallery
+            if user._id.toString()===gallery.user._id.toString()
+              option(value=user._id selected) #{user.first_name} #{user.last_name}
+            else
+              option(value=user._id) #{user.first_name} #{user.last_name}
+          else
+            option(value=user._id) #{user.first_name} #{user.last_name}
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

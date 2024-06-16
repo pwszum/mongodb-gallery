@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1=title
+  if user_list.length
+    each user in user_list
+      ul
+        li #{user.first_name} #{user.last_name} (#{user.username})
+  else
+    p There are no users.
