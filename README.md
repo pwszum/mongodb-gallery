@@ -6,6 +6,13 @@
 - Użytkownicy mogą dodawać, modyfikować i usuwać obrazki w galeriach,
 - Aplikacja wykorzystuje lokalną bazę GalleryDB z trzema powiązanymi ze sobą kolekcjami galleries, images i users.
 
+# Logowanie
+Nazwa użytkownika: admin
+Hasło: administrator
+
+# Restore bazy danych
+mongorestore --archive="dump/GalleryDB"
+
 # Interfejs:
 /galleries (GET) - lista dodanych galerii (nazwa, opis, data dodania, przypisany użytkownik)
 /images (GET) - lista dodanych obrazków (tytuł, opis, ścieżka, przypisana galeria)
