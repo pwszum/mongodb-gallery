@@ -8,6 +8,7 @@
 
 # Logowanie
 Nazwa użytkownika: admin
+
 Hasło: administrator
 
 # Restore bazy danych
@@ -15,11 +16,15 @@ mongorestore --archive="dump/GalleryDB"
 
 # Interfejs:
 /galleries (GET) - lista dodanych galerii (nazwa, opis, data dodania, przypisany użytkownik)
+
 /images (GET) - lista dodanych obrazków (tytuł, opis, ścieżka, przypisana galeria)
+
 /users (GET) - lista zarejestrowanych użytkowników (imię, nazwisko, nazwa użytkownika)
+
 /stats (GET) - statystyki serwisu (użytkownicy, galerie, obrazki)
 
 /galleries/gallery_browse (GET, POST) - przeglądanie obrazków w galerii
+
 Aby obejrzeć dodane obrazy, należy wybrać nazwę galerii z listy i zatwierdzić wybór przyciskiem "Submit".
 Pod obrazkami są trzy przyciski:
 * View Full Image - wyświetlanie obrazka w pełnej rozdzielczości
@@ -27,12 +32,15 @@ Pod obrazkami są trzy przyciski:
 * Delete Image (/images/image_delete/:id) - usuwa obrazek (tylko po zalogowaniu)
 
 /users/user_add (GET, POST) - rejestracja nowego użytkownika
+
 /galleries/gallery_add (GET, POST) - dodawanie nowej galerii (po zalogowaniu)
+
 /galleries/gallery_delete (GET, POST) - usuwanie galerii (po wybraniu z listy)
 
 /images/image_add (GET, POST) - dodawanie nowego obrazka
 
 /users/user_login (GET, POST) - logowanie użytkownika
+
 /users/user_logout (POST) - wylogowanie
 
 # Użyte pakiety:
